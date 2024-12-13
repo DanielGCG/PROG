@@ -1,0 +1,33 @@
+/*Esse programa se refere ao exercício 2 do LAB 1*/
+
+#include <stdio.h>
+#include <string.h>
+
+
+void vetorcontarvogais (char palavra[], int *pv){
+    int vogais = 0;
+    for (int i = 0; palavra[i] != NULL ; i++){
+        if (palavra[i] == 'a' || palavra[i] == 'e' || palavra[i] == 'i' || palavra[i] == 'o' || palavra[i] == 'u'){
+            vogais++;
+        }
+    }
+    printf ("%d", vogais);
+    *pv = vogais;
+}
+
+
+int main (){
+    //Biblioteca de variáveis:
+    char palavra[50]; //Vetor de palavra de até 100 cacteres.
+    int quantidadevogais = 0;
+    int *pv = &quantidadevogais;
+
+
+    //Lê a palavra
+    printf ("\nEscreva a palavra que voce quer contar as vogais:");
+    scanf("%s", palavra);
+
+    vetorcontarvogais (palavra, *pv);
+
+    return 0;
+}
